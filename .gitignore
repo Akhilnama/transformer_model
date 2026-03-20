@@ -12,12 +12,14 @@ env_transformer_model/
 checkpoints/*.pt
 checkpoints/*.bin
 checkpoints/*.pth
+checkpoints/
 
 # Generated samples
 checkpoints/sample.txt
 
 # Dataset
 data/*.txt
+data/
 
 # Streamlit
 .streamlit/
