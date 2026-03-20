@@ -1,8 +1,12 @@
 import torch
 from src.tokenizer import CharTokenizer
 from src.model import TransformerLM
+import os
 
-text = open("data/shakespeare.txt").read()
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, "data", "movie_dialogues.txt")
+
+text = open(DATA_PATH, encoding="utf-8").read()
 tok = CharTokenizer(text)
 
 model = TransformerLM(tok.vocab_size)

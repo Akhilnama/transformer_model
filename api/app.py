@@ -5,7 +5,12 @@ from pydantic import BaseModel
 from src.model import TransformerLM
 from src.tokenizer import CharTokenizer
 
-text = open("data/shakespeare.txt").read()
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, "data", "movie_dialogues.txt")
+
+text = open(DATA_PATH, encoding="utf-8").read()
 tok = CharTokenizer(text)
 
 model = TransformerLM(tok.vocab_size)
